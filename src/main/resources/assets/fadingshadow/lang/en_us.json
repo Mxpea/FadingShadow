@@ -1,0 +1,13 @@
+{
+  "itemGroup.fadingshadow": "Example Mod Tab",
+  "block.fadingshadow.example_block": "Example Block",
+  "item.fadingshadow.example_item": "Example Item",
+
+  "fadingshadow.configuration.title": "{Fading Shadow} Configs",
+  "fadingshadow.configuration.section.fadingshadow.common.toml": "{Fading Shadow} Configs",
+  "fadingshadow.configuration.section.fadingshadow.common.toml.title": "{Fading Shadow} Configs",
+  "fadingshadow.configuration.items": "Item List",
+  "fadingshadow.configuration.logDirtBlock": "Log Dirt Block",
+  "fadingshadow.configuration.magicNumberIntroduction": "Magic Number Text",
+  "fadingshadow.configuration.magicNumber": "Magic Number"
+}
