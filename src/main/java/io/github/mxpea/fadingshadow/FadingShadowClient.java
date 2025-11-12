@@ -25,7 +25,7 @@ public class FadingShadowClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        FadingShadow.LOGGER.info("HELLO FROM CLIENT SETUP");
+        FadingShadow.LOGGER.info("hi from the void");
         FadingShadow.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
