@@ -1,5 +1,6 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.item.ModItem;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -69,6 +70,8 @@ public class FadingShadow {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ModItem.register(modEventBus);
+
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
@@ -90,7 +93,7 @@ public class FadingShadow {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
+        LOGGER.info("▩▩▩▩▩▮▬▬▦▥▨");
 
         if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
             LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
@@ -103,8 +106,8 @@ public class FadingShadow {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItem.reality_fabric);
         }
     }
 

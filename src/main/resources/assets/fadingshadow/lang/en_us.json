@@ -1,7 +1,5 @@
 {
-  "itemGroup.fadingshadow": "Example Mod Tab",
-  "block.fadingshadow.example_block": "Example Block",
-  "item.fadingshadow.example_item": "Example Item",
+  "item.fadingshadow.reality_fabric": "Reality fabric",
 
   "fadingshadow.configuration.title": "{Fading Shadow} Configs",
   "fadingshadow.configuration.section.fadingshadow.common.toml": "{Fading Shadow} Configs",
