@@ -1,5 +1,6 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.item.ModCreativeTab;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import org.slf4j.Logger;
 
@@ -55,6 +56,7 @@ public class FadingShadow {
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
+    /*
     // Creates a creative tab with the id "fadingshadow:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.fadingshadow")) //The language key for the title of your CreativeModeTab
@@ -64,13 +66,16 @@ public class FadingShadow {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
+     */
+
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public FadingShadow(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+    //初始化
         ModItem.register(modEventBus);
+        ModCreativeTab.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -106,7 +111,7 @@ public class FadingShadow {
  */
     }
 
-    // Add the example block item to the building blocks tab
+    // 创造模式物品栏分类
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItem.reality_fabric);
@@ -117,7 +122,7 @@ public class FadingShadow {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        // Do something when the server starts
+        // 服务器启动时打印日志
         LOGGER.info("Fading,,,From where behind the reality..,");
     }
 }

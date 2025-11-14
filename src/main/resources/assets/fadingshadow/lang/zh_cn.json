@@ -1,6 +1,7 @@
 {
   "item.fadingshadow.reality_fabric": "现实织料",
   "item.fadingshadow.apple_juice": "苹果汁",
+  "itemGroup.fs_tab": "{消逝之影}",
 
   "fadingshadow.configuration.title": "{Fading Shadow} Configs",
   "fadingshadow.configuration.section.fadingshadow.common.toml": "{Fading Shadow} Configs",
