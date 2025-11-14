@@ -110,7 +110,7 @@ public class FadingShadow {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItem.reality_fabric);
-            event.accept(ModItem.apple_juice);
+            event.accept(ModItem.apple_juice);  //but do you know?apple juice is yellow instead of red,hahaha
         }
     }
 
