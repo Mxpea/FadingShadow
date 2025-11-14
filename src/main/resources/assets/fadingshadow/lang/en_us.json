@@ -1,6 +1,7 @@
 {
   "item.fadingshadow.reality_fabric": "Reality fabric",
   "item.fadingshadow.apple_juice": "Apple juice",
+  "itemGroup.fs_tab": "{Fading Shadow}",
 
   "fadingshadow.configuration.title": "{Fading Shadow} Configs",
   "fadingshadow.configuration.section.fadingshadow.common.toml": "{Fading Shadow} Configs",
