@@ -1,0 +1,15 @@
+{
+  "vertex": "shaders/core/error.vsh",
+  "fragment": "shaders/core/error.fsh",
+  "samplers": [
+    "Sampler0",
+    "Sampler2"
+  ],
+  "attributes": [
+    "Position",
+    "Color",
+    "UV0",
+    "UV2",
+    "Normal"
+  ]
+}

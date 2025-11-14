@@ -15,6 +15,8 @@ public class ModItem {
 
     public static final DeferredItem<Item> reality_fabric =
             ITEMS.register("reality_fabric", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> apple_juice =
+            ITEMS.register("apple_juice", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
