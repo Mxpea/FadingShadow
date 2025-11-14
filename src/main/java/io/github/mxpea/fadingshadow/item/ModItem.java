@@ -17,7 +17,10 @@ public class ModItem {
             ITEMS.register("reality_fabric", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> apple_juice =
-            ITEMS.register("apple_juice", () -> new Item(new Item.Properties()));
+            ITEMS.register("apple_juice", () -> new AppleJuiceItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> test =
+            ITEMS.register("test", () -> new Item(new Item.Properties()));//be deleted later
 
 
     //下面是初始化的，不要动

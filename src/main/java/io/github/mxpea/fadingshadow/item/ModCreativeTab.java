@@ -23,6 +23,7 @@ public class ModCreativeTab {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItem.reality_fabric);
                         output.accept(ModItem.apple_juice);
+                        output.accept(ModItem.test);
                     }).build());
 
     //初始化
