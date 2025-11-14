@@ -1,4 +1,20 @@
 
+# FADING SHADOW
+
+你在追寻何物？  
+
+when the sky is falling.
+when the void crashing.
+when the reality breaks.  
+when ... you realize you can did it.
+
+that time ...
+even the deepest shadow will fading away...
+
+
+
+
+
 Installation information
 =======
 
