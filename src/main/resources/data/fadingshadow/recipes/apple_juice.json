@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    { "item": "minecraft:apple" },
+    { "item": "minecraft:glass_bottle" }
+  ],
+  "result": {
+    "item": "minecraft:glass_bottle",
+    "count": 1
+  }
+}
