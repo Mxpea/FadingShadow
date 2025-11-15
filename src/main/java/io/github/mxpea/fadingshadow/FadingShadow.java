@@ -114,6 +114,9 @@ public class FadingShadow {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItem.apple_juice);  //but do you know?apple juice is yellow instead of red,hahaha
         }
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItem.red_chili);
+        }
     }
 
 

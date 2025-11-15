@@ -13,8 +13,7 @@ import net.minecraft.world.level.Level;
 public class AppleJuiceItem extends Item {
 
     public AppleJuiceItem(Properties props) {
-        super(props
-                .food(new FoodProperties.Builder()
+        super(props.food(new FoodProperties.Builder()
                         .nutrition(2)   //回复饱食度
                         .saturationModifier(0.3F)//回复饱和度，这是一个很低的值
                         .alwaysEdible()  //一直能喝
