@@ -1,0 +1,23 @@
+package io.github.mxpea.fadingshadow.effects;
+
+import io.github.mxpea.fadingshadow.FadingShadow;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import static net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.MOB_EFFECTS;
+
+public class ModEffect {
+    public static final DeferredRegister<MobEffect> MOB_EFFECTS =
+        DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, FadingShadow.MODID);
+
+    public static final Holder<MobEffect> ChiliEffect = MOB_EFFECTS.register("chilieffect",
+            () ->new ChiliEffect(MobEffectCategory.NEUTRAL,0xd25c37));
+
+    public static void register(IEventBus eventBus) {
+        MOB_EFFECTS.register(eventBus);
+    }
+}

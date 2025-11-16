@@ -1,7 +1,12 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.effects.ModEffect;
 import io.github.mxpea.fadingshadow.item.ModCreativeTab;
 import io.github.mxpea.fadingshadow.item.ModItem;
+import io.github.mxpea.fadingshadow.item.ModPotion;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.Potions;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -41,6 +46,10 @@ public class FadingShadow {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "fadingshadow" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+    // Create a Deferred Register to hold Potion which will all be registered under the "fadingshadow" namespace
+    public static final DeferredRegister<Potion> POTION = DeferredRegister.create(Registries.POTION, MODID);
+    // Create a Deferred Register to hold Potion which will all be registered under the "fadingshadow" namespace
+    public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, MODID);
 
     // Creates a new Block with the id "fadingshadow:example_block", combining the namespace and path
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
@@ -71,6 +80,8 @@ public class FadingShadow {
     //初始化
         ModItem.register(modEventBus);
         ModCreativeTab.register(modEventBus);
+        ModPotion.register(modEventBus);
+        ModEffect.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -78,6 +89,11 @@ public class FadingShadow {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+        // Register the Deferred Register to the mod event bus so potions get registered
+        POTION.register(modEventBus);
+        // Register the Deferred Register to the mod event bus so potions get registered
+        MOB_EFFECTS.register(modEventBus);
+
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (FadingShadow) to respond directly to events.
@@ -117,10 +133,10 @@ public class FadingShadow {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItem.red_chili);
             }
-            if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-                event.accept(ModItem.red_chili_juice);
+        //if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+          //      event.accept(ModItem.red_chili_juice);
 
-        }
+       // }
     }
 
 
