@@ -1,7 +1,6 @@
 package io.github.mxpea.fadingshadow.item;
 
 import io.github.mxpea.fadingshadow.effects.AppleJuiceItem;
-import io.github.mxpea.fadingshadow.effects.ChiliPeperJuiceItem;
 import io.github.mxpea.fadingshadow.effects.ChiliPepperItem;
 import io.github.mxpea.fadingshadow.FadingShadow;
 import net.minecraft.world.item.Item;
@@ -25,9 +24,6 @@ public class ModItem {
 
     public static final DeferredItem<Item> red_chili =
             ITEMS.register("red_chili", () -> new ChiliPepperItem(new Item.Properties()));
-    public static final DeferredItem<Item> red_chili_juice =
-            ITEMS.register("red_chili_juice", () -> new ChiliPeperJuiceItem(new Item.Properties()));
-
 
     //下面是初始化的，不要动
     public static void register(IEventBus eventBus) {
