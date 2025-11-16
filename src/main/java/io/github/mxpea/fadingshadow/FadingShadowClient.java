@@ -1,6 +1,10 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.item.ModItem;
+import io.github.mxpea.fadingshadow.item.ModPotion;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -9,6 +13,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = FadingShadow.MODID, dist = Dist.CLIENT)
@@ -28,4 +33,18 @@ public class FadingShadowClient {
         FadingShadow.LOGGER.info("hi from the void");
         FadingShadow.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
+
+    //这个是用来添加酿造台配方的
+   @SubscribeEvent
+    public static void registerBrewingRecipes(RegisterBrewingRecipesEvent event) {
+        PotionBrewing.Builder builder = event.getBuilder();
+        builder.addMix(
+                Potions.AWKWARD,
+                ModItem.red_chili.get(),
+                ModPotion.red_chili_juice
+        );
+    }
 }
+
+
+

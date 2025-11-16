@@ -1,12 +1,12 @@
 package io.github.mxpea.fadingshadow.item;
 
+import io.github.mxpea.fadingshadow.effects.AppleJuiceItem;
+import io.github.mxpea.fadingshadow.effects.ChiliPepperItem;
 import io.github.mxpea.fadingshadow.FadingShadow;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 
 public class ModItem {
@@ -22,6 +22,8 @@ public class ModItem {
     public static final DeferredItem<Item> test =
             ITEMS.register("test", () -> new Item(new Item.Properties()));//be deleted later
 
+    public static final DeferredItem<Item> red_chili =
+            ITEMS.register("red_chili", () -> new ChiliPepperItem(new Item.Properties()));
 
 
     //下面是初始化的，不要动

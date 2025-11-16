@@ -1,5 +1,5 @@
 //这个类定义了喝苹果汁（apple_juice）可以饮用和相关的属性
-package io.github.mxpea.fadingshadow.item;
+package io.github.mxpea.fadingshadow.effects;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -13,10 +13,9 @@ import net.minecraft.world.level.Level;
 public class AppleJuiceItem extends Item {
 
     public AppleJuiceItem(Properties props) {
-        super(props
-                .food(new FoodProperties.Builder()
+        super(props.food(new FoodProperties.Builder()
                         .nutrition(2)   //回复饱食度
-                        .saturationModifier(0.3F)//回复饱和度，这是一个很低的值
+                        .saturationModifier(0.3F)//回复饱和度0.3F，这是一个很低的值
                         .alwaysEdible()  //一直能喝
                         // 在你的 mappings 中 canAlwaysEat() / alwaysEat() 可能不可见，先不要调用它
                         .build())
