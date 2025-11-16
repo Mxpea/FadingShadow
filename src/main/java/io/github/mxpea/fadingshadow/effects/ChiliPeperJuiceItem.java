@@ -1,5 +1,5 @@
-//这个类定义了喝苹果汁（apple_juice）可以饮用和相关的属性
-package io.github.mxpea.fadingshadow.item;
+//这个类定义了喝辣椒水（red_chili_juice）可以饮用和相关的属性
+package io.github.mxpea.fadingshadow.effects;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -9,35 +9,37 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 
-public class AppleJuiceItem extends Item {
 
-    public AppleJuiceItem(Properties props) {
+public class ChiliPeperJuiceItem extends Item {
+
+    public ChiliPeperJuiceItem(Properties props) {
         super(props.food(new FoodProperties.Builder()
-                        .nutrition(2)   //回复饱食度
-                        .saturationModifier(10F)//回复饱和度0.3F，这是一个很低的值
-                        .alwaysEdible()  //一直能喝
-                        // 在你的 mappings 中 canAlwaysEat() / alwaysEat() 可能不可见，先不要调用它
-                        .build())
+                .alwaysEdible()  //一直能喝
+
+                .build())
         );
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
-    }
+    public UseAnim getUseAnimation(ItemStack stack) {return UseAnim.DRINK;}
 
     // 这个签名与 IDE 中父类匹配（如果你之前写的就是这个，就继续用它）
     @Override
-    public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 32;
-    }
+    public int getUseDuration(ItemStack stack, LivingEntity entity) {return 32;}
 
     // 这是关键：父类在你当前环境中期望 (ItemStack, Level, LivingEntity)
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         // 先让父类处理食物效果（比如回血、效果、消耗）
         ItemStack result = super.finishUsingItem(stack, level, entity);
+        if (!level.isClientSide()) {
+            entity.igniteForTicks(40); //着火时间
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0));
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 1));
+        }
 
         // 只在服务端给玩家空瓶（并且非创造模式）
         if (!level.isClientSide() && entity instanceof Player player) {
@@ -45,8 +47,7 @@ public class AppleJuiceItem extends Item {
                 ItemStack bottle = new ItemStack(Items.GLASS_BOTTLE);
 
                 if (stack.isEmpty()) {
-                    // 原始栈为空（物品被完全消耗），返回空瓶
-                    return bottle;
+                    return bottle;// 原始栈为空（物品被完全消耗），返回空瓶
                 } else {
                     // 否则尝试把瓶子放回背包，放不下就扔地上
                     if (!player.getInventory().add(bottle)) {
