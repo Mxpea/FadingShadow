@@ -1,6 +1,7 @@
 package io.github.mxpea.fadingshadow.item;
 
 import io.github.mxpea.fadingshadow.FadingShadow;
+import io.github.mxpea.fadingshadow.block.ModBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -24,6 +25,7 @@ public class ModCreativeTab {
                         output.accept(ModItem.reality_fabric);
                         output.accept(ModItem.apple_juice);
                         output.accept(ModItem.test);
+                        output.accept(ModBlock.scranton_reality_anchors);
                     }).build());
 
     //初始化

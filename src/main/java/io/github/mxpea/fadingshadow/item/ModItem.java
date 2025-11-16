@@ -23,6 +23,7 @@ public class ModItem {
             ITEMS.register("test", () -> new Item(new Item.Properties()));//be deleted later
 
 
+
     //下面是初始化的，不要动
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
