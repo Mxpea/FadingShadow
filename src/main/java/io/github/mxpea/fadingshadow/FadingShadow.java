@@ -116,8 +116,13 @@ public class FadingShadow {
         }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItem.red_chili);
+            }
+            if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+                event.accept(ModItem.red_chili_juice);
+
         }
     }
+
 
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

@@ -1,6 +1,5 @@
 //这个类定义了red_chili可以吃，并且可以让玩家着火
 package io.github.mxpea.fadingshadow.item;
-
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -28,8 +27,8 @@ public class ChiliPepperItem extends Item {
         // 这里我们让玩家和生物着火 2 秒（2 * 20 ticks = 40 ticks）
         if (!level.isClientSide()) {
             entity.igniteForTicks(40); //着火时间
-
         }
+
 
         return result;
     }
