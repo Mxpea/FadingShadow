@@ -1,5 +1,6 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.block.ModBlock;
 import io.github.mxpea.fadingshadow.effects.ModEffect;
 import io.github.mxpea.fadingshadow.item.ModCreativeTab;
 import io.github.mxpea.fadingshadow.item.ModItem;
@@ -77,9 +78,13 @@ public class FadingShadow {
     public FadingShadow(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-    //初始化
+
+
+        //初始化
         ModItem.register(modEventBus);
         ModCreativeTab.register(modEventBus);
+        ModBlock.register(modEventBus);
+
         ModPotion.register(modEventBus);
         ModEffect.register(modEventBus);
 

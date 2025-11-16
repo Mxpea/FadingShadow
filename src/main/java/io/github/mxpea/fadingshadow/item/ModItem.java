@@ -25,6 +25,7 @@ public class ModItem {
     public static final DeferredItem<Item> red_chili =
             ITEMS.register("red_chili", () -> new ChiliPepperItem(new Item.Properties()));
 
+
     //下面是初始化的，不要动
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
