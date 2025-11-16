@@ -117,7 +117,7 @@ public class FadingShadow {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItem.red_chili);
             }
-            if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
                 event.accept(ModItem.red_chili_juice);
 
         }
