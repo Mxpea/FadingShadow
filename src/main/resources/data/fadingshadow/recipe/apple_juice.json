@@ -1,13 +1,16 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "food",
-  "group": "drinks",
   "ingredients": [
-    { "item": "minecraft:apple" },
-    { "item": "minecraft:glass_bottle" }
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
   ],
   "result": {
-    "id": "fadingshadow:apple_juice",
-    "count": 1
+    "count": 1,
+    "id": "fadingshadow:apple_juice"
   }
 }
