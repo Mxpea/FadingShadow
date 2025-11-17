@@ -15,6 +15,7 @@ public class ChiliPepperItem extends Item {
         super(props.food(new FoodProperties.Builder()
                 .alwaysEdible()  //一直能吃
                 .build())//不知道是干什么的，ai给的，先留着吧……
+                //ber哥们，这是构造器的结尾，看到上面的FoodProperties.Builder()了吗 -Mxpea
         );
     }
 
