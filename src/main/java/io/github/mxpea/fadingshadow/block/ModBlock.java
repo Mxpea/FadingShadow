@@ -21,17 +21,19 @@ public class ModBlock {
             DeferredRegister.createBlocks(FadingShadow.MODID);
 
     public static final DeferredBlock<Block> scranton_reality_anchors =
-            registerBlocks(() -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+            registerBlocks("scranton_reality_anchors", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> netherreactor =
+            registerBlocks("netherreactor", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
 
     //注册方块物品
-    private static <T extends Block> void registerBlockItems(DeferredBlock<T> block) {
-        ModItem.ITEMS.register("scranton_reality_anchors", () -> new BlockItem(block.get(), new Item.Properties()));
+    private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block) {
+        ModItem.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    private static <T extends Block> DeferredBlock<T> registerBlocks(Supplier<T> block) {
-        DeferredBlock<T> blocks = BLOCKS.register("scranton_reality_anchors", block);
-        registerBlockItems(blocks);
+    private static  <T extends Block> DeferredBlock<T> registerBlocks(String name, Supplier<T> block) {
+        DeferredBlock<T> blocks = BLOCKS.register(name, block);
+        registerBlockItems(name, blocks);
         return blocks;
     }
 

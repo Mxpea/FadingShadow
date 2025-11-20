@@ -26,6 +26,7 @@ public class ModCreativeTab {
                         output.accept(ModItem.apple_juice);
                         output.accept(ModItem.test);
                         output.accept(ModBlock.scranton_reality_anchors);
+                        output.accept(ModBlock.netherreactor);
                     }).build());
 
     //初始化
