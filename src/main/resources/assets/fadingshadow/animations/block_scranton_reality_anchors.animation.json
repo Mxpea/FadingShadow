@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.scranton_reality_anchors.new": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 0, 360]
+						}
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"bone2": {
+					"position": {
+						"0.0": {
+							"vector": [0, 1, 0]
+						},
+						"2.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeInCubic"
+						},
+						"5.0": {
+							"vector": [0, -2, 0],
+							"easing": "easeOutCubic"
+						},
+						"7.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeInCubic"
+						},
+						"10.0": {
+							"vector": [0, 1, 0],
+							"easing": "easeOutCubic"
+						}
+					},
+					"scale": {
+						"vector": [1, 1, 1]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
