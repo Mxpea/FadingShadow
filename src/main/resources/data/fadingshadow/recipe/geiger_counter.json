@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GAG",
+    "GRG",
+    "GRG"
+  ],
+  "key": {
+    "A": { "item": "minecraft:amethyst_shard" },
+    "G": { "item": "minecraft:gold_ingot" },
+    "R": { "item": "minecraft:redstone" }
+  },
+  "result": {
+    "id": "fadingshadow:geiger_counter",
+    "count": 1
+  }
+}

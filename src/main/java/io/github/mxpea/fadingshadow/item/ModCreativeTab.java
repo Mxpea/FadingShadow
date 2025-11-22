@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 public class ModCreativeTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, FadingShadow.MODID);
-
+        //注册物品栏中
     public static final Supplier<CreativeModeTab> fading_shadow =
             CREATIVE_MODE_TABS.register("fs_tab", () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItem.reality_fabric.get()))
@@ -25,6 +25,9 @@ public class ModCreativeTab {
                         output.accept(ModItem.reality_fabric);
                         output.accept(ModItem.apple_juice);
                         output.accept(ModItem.test);
+                        output.accept(ModItem.advanced_geiger_counter);
+                        output.accept(ModItem.geiger_counter);
+
                         output.accept(ModBlock.scranton_reality_anchors);
                         output.accept(ModBlock.netherreactor);
                     }).build());
