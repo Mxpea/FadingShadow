@@ -28,6 +28,12 @@ public class ModItem {
     public static final DeferredItem<Item> red_chili =
             ITEMS.register("red_chili", () -> new ChiliPepperItem(new Item.Properties()));
 
+    public static final DeferredItem<Item> advanced_geiger_counter =
+            ITEMS.register("advanced_geiger_counter", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> geiger_counter =
+            ITEMS.register("geiger_counter", () -> new Item(new Item.Properties()));
+
 
 
     //下面是初始化的，不要动

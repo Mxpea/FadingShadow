@@ -40,5 +40,4 @@ public class ChiliPepperItem extends Item {
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
         return 32;
     }   //设置这个物品吃的时间
-    // 其他代码（如果你需要 food 恢复饱食度的话）省略或自己加
 }
