@@ -28,6 +28,7 @@ public class ModCreativeTab {
                         output.accept(ModItem.advanced_geiger_counter);
                         output.accept(ModItem.geiger_counter);
 
+                        output.accept(ModItem.lightning_in_a_bottle);
                         output.accept(ModBlock.scranton_reality_anchors);
                         output.accept(ModBlock.netherreactor);
                     }).build());
