@@ -16,6 +16,9 @@ public class ModItem {
     public static final DeferredItem<Item> reality_fabric =
             ITEMS.register("reality_fabric", () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> lightning_in_a_bottle =
+            ITEMS.register("lightning_in_a_bottle", () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> apple_juice =
             ITEMS.register("apple_juice", () -> new AppleJuiceItem(new Item.Properties()));
 
@@ -24,6 +27,7 @@ public class ModItem {
 
     public static final DeferredItem<Item> red_chili =
             ITEMS.register("red_chili", () -> new ChiliPepperItem(new Item.Properties()));
+
 
 
     //下面是初始化的，不要动
