@@ -2,10 +2,14 @@
   "item.fadingshadow.reality_fabric": "Reality fabric",
   "item.fadingshadow.apple_juice": "Apple juice",
   "item.fadingshadow.test": "test",
+  "item.fadingshadow.lightning_in_a_bottle": "Lightning in a bottle",
+
   "item.fadingshadow.red_chili": "red chili",
   "item.minecraft.potion.effect.red_chili_juice":"chili water",
   "item.minecraft.splash_potion.effect.red_chili_juice":"splash chili water",
   "item.minecraft.lingering_potion.effect.red_chili_juice":"lingering chili water",
+
+
 
   "block.fadingshadow.scranton_reality_anchors": "Scranton Reality Anchors (WIP)",
   "block.fadingshadow.netherreactor": "Nether reactor",

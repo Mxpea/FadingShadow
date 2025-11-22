@@ -25,6 +25,7 @@ public class ModCreativeTab {
                         output.accept(ModItem.reality_fabric);
                         output.accept(ModItem.apple_juice);
                         output.accept(ModItem.test);
+                        output.accept(ModItem.lightning_in_a_bottle);
                         output.accept(ModBlock.scranton_reality_anchors);
                         output.accept(ModBlock.netherreactor);
                     }).build());
