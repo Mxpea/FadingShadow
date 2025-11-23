@@ -1,8 +1,10 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ModPotion;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.api.distmarker.Dist;
@@ -11,6 +13,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -25,6 +28,12 @@ public class FadingShadowClient {
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        // 注册让投掷闪电瓶子用标准的“物品飞出去”渲染
+        event.registerEntityRenderer(ModEntity.LIGHTNING_BOTTLE.get(), ThrownItemRenderer::new);
     }
 
     @SubscribeEvent
