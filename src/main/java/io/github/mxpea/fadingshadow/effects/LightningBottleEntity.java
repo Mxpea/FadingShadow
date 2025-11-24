@@ -2,6 +2,7 @@ package io.github.mxpea.fadingshadow.effects;
 
 import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModItem;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.entity.EntityType;
@@ -9,6 +10,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
+import net.neoforged.neoforge.client.event.RenderHighlightEvent;
+
+import java.util.Random;
 
 public class LightningBottleEntity extends ThrowableItemProjectile {
 
@@ -21,6 +25,7 @@ public class LightningBottleEntity extends ThrowableItemProjectile {
     public LightningBottleEntity(Level world, LivingEntity owner) {
         super(ModEntity.LIGHTNING_BOTTLE.get(), owner, world);
     }
+
 
     @Override
     protected Item getDefaultItem() {
@@ -36,7 +41,17 @@ public class LightningBottleEntity extends ThrowableItemProjectile {
             x=getBlockX();
             y=getBlockY();
             z=getBlockZ();
-            level().explode(null,x,y,z,4.0f,false, Level.ExplosionInteraction.TNT);
+            level().explode(null,x,y,z,2f,true, Level.ExplosionInteraction.TNT);
+            LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT,level());//新建闪电实体
+            lightning.moveTo(x, y, z); // 设置位置
+            level().addFreshEntity(lightning);
+
+            int radius = 2;
+            Random rand = new Random();
+            double rx = x + (rand.nextDouble() * 2 * radius - radius); // [-radius, +radius]
+            double rz = z + (rand.nextDouble() * 2 * radius - radius); // [-radius, +radius]
+            lightning.moveTo(rx, y, rz); // 设置随机位置
+            level().addFreshEntity(lightning);
             this.discard();
         }
     }
