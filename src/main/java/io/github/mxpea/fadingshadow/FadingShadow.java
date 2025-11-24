@@ -2,12 +2,16 @@ package io.github.mxpea.fadingshadow;
 
 import io.github.mxpea.fadingshadow.block.ModBlock;
 import io.github.mxpea.fadingshadow.effects.ModEffect;
+import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModCreativeTab;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ModPotion;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
+import net.neoforged.neoforge.common.Tags;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -51,6 +55,8 @@ public class FadingShadow {
     public static final DeferredRegister<Potion> POTION = DeferredRegister.create(Registries.POTION, MODID);
     // Create a Deferred Register to hold Potion which will all be registered under the "fadingshadow" namespace
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, MODID);
+    // Create a Deferred Register to hold Potion which will all be registered under the "fadingshadow" namespace
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPE = DeferredRegister.create(Registries.ENTITY_TYPE,MODID);
 
     // Creates a new Block with the id "fadingshadow:example_block", combining the namespace and path
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
@@ -87,6 +93,7 @@ public class FadingShadow {
 
         ModPotion.register(modEventBus);
         ModEffect.register(modEventBus);
+        ModEntity.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -98,6 +105,8 @@ public class FadingShadow {
         POTION.register(modEventBus);
         // Register the Deferred Register to the mod event bus so potions get registered
         MOB_EFFECTS.register(modEventBus);
+        // Register the Deferred Register to the mod event bus so potions get registered
+        ENTITY_TYPE.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in.

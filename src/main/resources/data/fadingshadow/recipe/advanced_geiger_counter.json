@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DRN",
+    "RCR",
+    "GRI"
+  ],
+  "key": {
+    "G": { "item": "minecraft:gold_ingot" },
+    "C": { "item": "fadingshadow:geiger_counter" },
+    "R": { "item": "fadingshadow:reality_fabric" },
+    "D": { "item": "minecraft:diamond" },
+    "N": { "item": "minecraft:netherite_ingot" },
+    "I": { "item": "minecraft:iron_ingot" }
+  },
+  "result": {
+    "id": "fadingshadow:advanced_geiger_counter",
+    "count": 1
+  }
+}
