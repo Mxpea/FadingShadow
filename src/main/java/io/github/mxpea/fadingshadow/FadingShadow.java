@@ -1,6 +1,7 @@
 package io.github.mxpea.fadingshadow;
 
 import io.github.mxpea.fadingshadow.block.ModBlock;
+import io.github.mxpea.fadingshadow.block.entity.ModBlockEntities;
 import io.github.mxpea.fadingshadow.effects.ModEffect;
 import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModCreativeTab;
@@ -11,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.common.Tags;
 import org.slf4j.Logger;
 
@@ -37,6 +39,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import software.bernie.geckolib.GeckoLibConstants;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(FadingShadow.MODID)
@@ -90,10 +93,13 @@ public class FadingShadow {
         ModItem.register(modEventBus);
         ModCreativeTab.register(modEventBus);
         ModBlock.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModPotion.register(modEventBus);
         ModEffect.register(modEventBus);
         ModEntity.register(modEventBus);
+
+        GeckoLibConstants.init();
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -161,4 +167,6 @@ public class FadingShadow {
         // 服务器启动时打印日志
         LOGGER.info("Fading,,,From where behind the reality..,");
     }
+
+
 }

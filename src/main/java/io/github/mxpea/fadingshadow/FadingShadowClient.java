@@ -1,9 +1,14 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.block.entity.ModBlockEntities;
+import io.github.mxpea.fadingshadow.block.entity.client.AnimatedBlockRender;
 import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ModPotion;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
@@ -36,11 +41,14 @@ public class FadingShadowClient {
         event.registerEntityRenderer(ModEntity.LIGHTNING_BOTTLE.get(), ThrownItemRenderer::new);
     }
 
+
+
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
         FadingShadow.LOGGER.info("hi from the void");
         FadingShadow.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        BlockEntityRenderers.register(ModBlockEntities.SRC.get(), AnimatedBlockRender::new);
     }
 
     //这个是用来添加酿造台配方的
