@@ -21,7 +21,8 @@ public class ModBlock {
             DeferredRegister.createBlocks(FadingShadow.MODID);
 
     public static final DeferredBlock<Block> scranton_reality_anchors =
-            registerBlocks("scranton_reality_anchors", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollission()));
+            registerBlocks("scranton_reality_anchors", () -> new AnimatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollission()));
+
     public static final DeferredBlock<Block> netherreactor =
             registerBlocks("netherreactor", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 

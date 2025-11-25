@@ -6,6 +6,6 @@
     64
   ],
   "textures": {
-    "particle": "fadingshadow:item/texture"
+    "particle": "fadingshadow:block/scranton_reality_anchors"
   }
 }

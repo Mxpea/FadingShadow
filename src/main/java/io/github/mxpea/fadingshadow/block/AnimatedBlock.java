@@ -1,6 +1,7 @@
 package io.github.mxpea.fadingshadow.block;
 
 import com.mojang.serialization.MapCodec;
+import io.github.mxpea.fadingshadow.block.entity.AnimatedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -20,7 +21,8 @@ public class AnimatedBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return null;
+
+        return new AnimatedBlockEntity(blockPos, blockState);
     }
 
 

@@ -48,7 +48,7 @@ public class FadingShadowClient {
         // Some client setup code
         FadingShadow.LOGGER.info("hi from the void");
         FadingShadow.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        BlockEntityRenderers.register(ModBlockEntities.SRC.get(), AnimatedBlockRender::new);
+        BlockEntityRenderers.register(ModBlockEntities.SRA.get(), AnimatedBlockRender::new);
     }
 
     //这个是用来添加酿造台配方的

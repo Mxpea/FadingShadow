@@ -12,10 +12,18 @@ import software.bernie.geckolib.util.RenderUtil;
 
 
 public class AnimatedBlockEntity extends BlockEntity implements GeoBlockEntity {
+
+    // 这里需要你定义动画，把文件替换为Blockbench中导出的同名动画文件
+    private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
+            .thenLoop("animation.example_block.idle");
+
+    private static final RawAnimation ACTIVE_ANIM = RawAnimation.begin()
+            .thenPlay("animation.example_block.active");
+
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public AnimatedBlockEntity(BlockPos pos, BlockState blockState) {
-        super(ModBlockEntities.SRC.get(), pos, blockState);
+        super(ModBlockEntities.SRA.get(), pos, blockState);
     }
 
 
