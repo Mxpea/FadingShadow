@@ -34,6 +34,8 @@ public class ModItem {
 
     public static final DeferredItem<Item> geiger_counter =
             ITEMS.register("geiger_counter", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> firesalt =
+            ITEMS.register("firesalt", () -> new Item(new Item.Properties()));
 
 
 

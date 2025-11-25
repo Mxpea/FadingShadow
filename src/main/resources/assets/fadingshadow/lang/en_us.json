@@ -3,10 +3,11 @@
   "item.fadingshadow.apple_juice": "Apple juice",
   "item.fadingshadow.test": "test",
   "item.fadingshadow.lightning_in_a_bottle": "Lightning in a bottle",
-
   "item.fadingshadow.red_chili": "red chili",
   "item.fadingshadow.advanced_geiger_counter": "advanced geiger counter",
   "item.fadingshadow.geiger_counter": "geiger counter",
+  "item.fadingshadow.firesalt": "fire salt",
+
   "item.minecraft.potion.effect.red_chili_juice":"chili water",
   "item.minecraft.splash_potion.effect.red_chili_juice":"splash chili water",
   "item.minecraft.lingering_potion.effect.red_chili_juice":"lingering chili water",
