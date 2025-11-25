@@ -13,7 +13,7 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, FadingShadow.MODID);
 
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AnimatedBlockEntity>> SRC =
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AnimatedBlockEntity>> SRA =
             BLOCK_ENTITIES.register("src", () ->
                     BlockEntityType.Builder.of(AnimatedBlockEntity::new,
                             ModBlock.scranton_reality_anchors.get()).build(null));
