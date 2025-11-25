@@ -15,6 +15,23 @@ when ... you realize you can did it.
 that time ...  
 even the deepest shadow will fading away...  
 
+TO-DO List
+=======
+| 功能 | 状态 | 说明 |
+|------|------|------|
+| 战利品表 | 🔳 | 控制方块掉落的物品，实体掉落物和箱子战利品 |
+| 物品shader | 🔳 | 实现特殊视觉渲染 |
+| geo方块动画 | ⭕ | 方块动画 |
+| 数据生成 | 🔳 | - |
+| 新生物 | 🔳 | - |
+| 新群系 | 🔳 | - |
+| 新生物 | 🔳 | - |
+| 多方块结构 | 🔳 | - |
+| 这是一个示例 | ✅ | 已完成 |
+| 这是两个示例 | ⭕ | 正在实现 |
+| 这是三个示例 | 🔳 | 未完成 |
+
+
 Installation information
 =======
 
