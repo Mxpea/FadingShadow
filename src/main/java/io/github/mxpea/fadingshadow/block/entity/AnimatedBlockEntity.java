@@ -10,17 +10,17 @@ import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceC
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.RenderUtil;
 
-
 public class AnimatedBlockEntity extends BlockEntity implements GeoBlockEntity {
 
-    // 这里需要你定义动画，把文件替换为Blockbench中导出的同名动画文件
-    private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
-            .thenLoop("animation.example_block.idle");
+    private final double randomOffset = this.worldPosition.asLong() % 1000 / 20.0D; // 根据坐标生成稳定随机偏移
 
-    private static final RawAnimation ACTIVE_ANIM = RawAnimation.begin()
-            .thenPlay("animation.example_block.active");
 
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    // 对应 block_scranton_reality_anchors.animation.json 中的
+    // "animation.scranton_reality_anchors.new"
+    private static final RawAnimation SRA_LOOP_ANIM = RawAnimation.begin()
+            .thenLoop("animation.scranton_reality_anchors.new");
+
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public AnimatedBlockEntity(BlockPos pos, BlockState blockState) {
         super(ModBlockEntities.SRA.get(), pos, blockState);
@@ -29,16 +29,16 @@ public class AnimatedBlockEntity extends BlockEntity implements GeoBlockEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        // tickDelay = 0 表示每 tick 都更新
         controllers.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
-    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState){
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
+    // 这里的 T 可以直接写成 GeoAnimatable
+    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> state) {
+        // 只要方块存在，就让它一直播放 SRA_LOOP_ANIM
+        state.getController().setAnimation(SRA_LOOP_ANIM);
         return PlayState.CONTINUE;
     }
-
-
-
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
@@ -47,7 +47,7 @@ public class AnimatedBlockEntity extends BlockEntity implements GeoBlockEntity {
 
     @Override
     public double getTick(Object blockEntity) {
-        return RenderUtil.getCurrentTick();
+        // 用渲染 tick 保证客户端动画流畅
+        return RenderUtil.getCurrentTick() + randomOffset;
     }
 }
-
