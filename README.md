@@ -32,6 +32,10 @@ TO-DO List
 | 这是两个示例 | ⭕ | 正在实现 |
 | 这是三个示例 | 🔳 | 未完成 |
 
+License
+=======
+- code: https://opensource.org/licenses/Apache-2.0
+- assets: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 Installation information
 =======
