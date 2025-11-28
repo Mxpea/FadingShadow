@@ -1,10 +1,12 @@
 package io.github.mxpea.fadingshadow.item;
 
+import io.github.mxpea.fadingshadow.block.ModBlocks;
 import io.github.mxpea.fadingshadow.effects.AppleJuiceItem;
 import io.github.mxpea.fadingshadow.effects.ChiliPepperItem;
 import io.github.mxpea.fadingshadow.FadingShadow;
 import io.github.mxpea.fadingshadow.effects.LightThrowItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -18,10 +20,10 @@ public class ModItem {
             ITEMS.register("reality_fabric", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> lightning_in_a_bottle =      //下面的代码可以设置最大堆叠数（maxStackSize）
-            ITEMS.register("lightning_in_a_bottle", () -> new LightThrowItem(new Item.Properties().stacksTo(1)));
+            ITEMS.register("lightning_in_a_bottle", () -> new LightThrowItem(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> apple_juice =
-            ITEMS.register("apple_juice", () -> new AppleJuiceItem(new Item.Properties().stacksTo(1)));
+            ITEMS.register("apple_juice", () -> new AppleJuiceItem(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> test =
             ITEMS.register("test", () -> new Item(new Item.Properties()));//be deleted later
@@ -38,6 +40,9 @@ public class ModItem {
             ITEMS.register("firesalt", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> firesalt_ingot =
             ITEMS.register("firesalt_ingot", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> chili_seed =
+            ITEMS.register("chili_seed", () -> new Item(new Item.Properties()));
 
 
 

@@ -1,11 +1,9 @@
 package io.github.mxpea.fadingshadow.item;
 
 import io.github.mxpea.fadingshadow.FadingShadow;
-import io.github.mxpea.fadingshadow.block.ModBlock;
-import net.minecraft.core.Registry;
+import io.github.mxpea.fadingshadow.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -30,9 +28,10 @@ public class ModCreativeTab {
                         output.accept(ModItem.firesalt);
                         output.accept(ModItem.firesalt_ingot);
                         output.accept(ModItem.lightning_in_a_bottle);
+                        output.accept(ModItem.chili_seed);
 
-                        output.accept(ModBlock.scranton_reality_anchors);
-                        output.accept(ModBlock.netherreactor);
+                        output.accept(ModBlocks.scranton_reality_anchors);
+                        output.accept(ModBlocks.netherreactor);
                     }).build());
 
     //初始化

@@ -1,7 +1,7 @@
 package io.github.mxpea.fadingshadow.block.entity;
 
 import io.github.mxpea.fadingshadow.FadingShadow;
-import io.github.mxpea.fadingshadow.block.ModBlock;
+import io.github.mxpea.fadingshadow.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -16,7 +16,7 @@ public class ModBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AnimatedBlockEntity>> SRA =
             BLOCK_ENTITIES.register("src", () ->
                     BlockEntityType.Builder.of(AnimatedBlockEntity::new,
-                            ModBlock.scranton_reality_anchors.get()).build(null));
+                            ModBlocks.scranton_reality_anchors.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

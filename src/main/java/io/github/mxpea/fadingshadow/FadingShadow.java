@@ -1,6 +1,6 @@
 package io.github.mxpea.fadingshadow;
 
-import io.github.mxpea.fadingshadow.block.ModBlock;
+import io.github.mxpea.fadingshadow.block.ModBlocks;
 import io.github.mxpea.fadingshadow.block.entity.ModBlockEntities;
 import io.github.mxpea.fadingshadow.effects.ModEffect;
 import io.github.mxpea.fadingshadow.entity.ModEntity;
@@ -8,12 +8,8 @@ import io.github.mxpea.fadingshadow.item.ModCreativeTab;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ModPotion;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.Potions;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.neoforge.common.Tags;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -92,7 +88,7 @@ public class FadingShadow {
         //初始化
         ModItem.register(modEventBus);
         ModCreativeTab.register(modEventBus);
-        ModBlock.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
         ModPotion.register(modEventBus);

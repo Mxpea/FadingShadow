@@ -3,8 +3,7 @@ package io.github.mxpea.fadingshadow.block;
 import io.github.mxpea.fadingshadow.FadingShadow;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ScrantonRealityAnchorsItem;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,17 +19,22 @@ import java.util.function.Supplier;
 author:Mxpea
 Edited:25.11.16
  */
-public class ModBlock {
+public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(FadingShadow.MODID);
 
     public static final DeferredBlock<Block> scranton_reality_anchors =
             registerBlocks("scranton_reality_anchors",
-                    () -> new AnimatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+                    () -> new AnimatedBlock(BlockBehaviour.Properties.of().strength(2.0F,6.0F)));
 
     public static final DeferredBlock<Block> netherreactor =
             registerBlocks("netherreactor",         //添加代码需要正确的工具才能挖掘“.requiresCorrectToolForDrops()”
                     () -> new Block(BlockBehaviour.Properties.of().strength(2.0F,6.0F)));
+
+    //这个注册作物用“BLOCKS.register”,因为方块物品就是种子
+    public static final DeferredBlock<Block> chili_crop =
+            BLOCKS.register("chili_crop",
+                    () -> new ChiliCropBlock(BlockBehaviour.Properties.of().noCollission().instabreak().randomTicks()));
 
     // 默认情况下注册普通方块物品
     private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block) {

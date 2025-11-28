@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "age=0": { "model": "fadingshadow:block/chili_corp_stage0" },
+    "age=1": { "model": "fadingshadow:block/chili_corp_stage1" },
+    "age=2": { "model": "fadingshadow:block/chili_corp_stage2" },
+    "age=3": { "model": "fadingshadow:block/chili_corp_stage3" }
+  }
+}
