@@ -63,5 +63,5 @@ https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
 Additional Resources: 
 ==========
 Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+NeoForged Discord: https://discord.neoforged.net/  
 geckolib: https://github.com/bernie-g/geckolib
