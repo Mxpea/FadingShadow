@@ -15,6 +15,13 @@ when ... you realize you can did it.
 that time ...  
 even the deepest shadow will fading away...  
 
+
+
+
+Additional info
+=======
+Requires prerequisites: geckolib
+
 TO-DO List
 =======
 | 功能 | 状态 | 说明 |
@@ -40,11 +47,7 @@ License
 Installation information
 =======
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+This repository is created provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
 If at any point you are missing libraries in your IDE, or you've run into problems you can
 run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
@@ -61,3 +64,4 @@ Additional Resources:
 ==========
 Community Documentation: https://docs.neoforged.net/  
 NeoForged Discord: https://discord.neoforged.net/
+geckolib: https://github.com/bernie-g/geckolib
