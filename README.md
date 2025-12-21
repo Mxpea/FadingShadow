@@ -7,14 +7,14 @@
 
 你在追寻何物？  
 
-you sleep
-you awake
-you watch the sky falling
-you watch the earth collapse
-you see the light exudationed your deepest fear
-you see the shadow fading out
+you sleep  
+you awake  
+you watch the sky falling  
+you watch the earth collapse  
+you see the light exudationed your deepest fear  
+you see the shadow fading out  
   
-noting to do
+noting to do  
 nowhere to hide.
 
 
