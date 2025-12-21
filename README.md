@@ -7,13 +7,14 @@
 
 你在追寻何物？  
 
-when the sky is falling.  
-when the void crashing.  
-when the reality breaks.    
-when ... you realize you can did it.  
-
-that time ...  
-even the deepest shadow will fading away...  
+you sleep,  
+you awake,  
+you watch the sky falling,  
+you watch the earth collapse,  
+you see the light exudationed your deepest fear,  
+you see the shadow fading out.  
+noting to do  
+nowhere to hide.
 
 
 
