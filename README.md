@@ -7,16 +7,19 @@
 
 你在追寻何物？  
 
-you sleep  
-you awake  
-you watch the sky falling  
-you watch the earth collapse  
-you see the light exudationed your deepest fear  
-you see the shadow fading out  
+where is your home?  
+it turning glowing fading.  
   
-noting to do  
-nowhere to hide.
+what are you seeking for?  
+it breaking tearing falling.  
+  
+so what now?  
+you see the echoes from the void.  
+you guided by that colorless light.  
+you was attracted by that fever night.  
 
+a world full of madness.  
+there, the shadow will fadeness.
 
 
 
