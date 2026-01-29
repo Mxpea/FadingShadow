@@ -1,20 +1,16 @@
 package io.github.mxpea.fadingshadow;
 
-import io.github.mxpea.fadingshadow.block.ModBlock;
+import io.github.mxpea.fadingshadow.block.ModBlocks;
 import io.github.mxpea.fadingshadow.block.entity.ModBlockEntities;
 import io.github.mxpea.fadingshadow.block.entity.client.AnimatedBlockRender;
 import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ModPotion;
-import io.github.mxpea.fadingshadow.item.ScrantonRealityAnchorsItem;
-import io.github.mxpea.fadingshadow.item.client.ScrantonRealityAnchorsItemRenderer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ItemEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.api.distmarker.Dist;
@@ -24,11 +20,9 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
-import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = FadingShadow.MODID, dist = Dist.CLIENT)
@@ -56,7 +50,15 @@ public class FadingShadowClient {
         FadingShadow.LOGGER.info("hi from the void");
         FadingShadow.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         BlockEntityRenderers.register(ModBlockEntities.SRA.get(), AnimatedBlockRender::new);
+
+        event.enqueueWork(() -> { //这些代码让种子作物定义为.cutout，让缘正常显示
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.chili_crop.get(), RenderType.cutout());
+        });
+
     }
+
+
+
 
     //这个是用来添加酿造台配方的
    @SubscribeEvent

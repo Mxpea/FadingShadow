@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "fadingshadow:netherreactor"
+          "name": "fadingshadow:scranton_reality_anchors"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "fadingshadow:netherreactor"
+  "random_sequence": "fadingshadow:block/scranton_reality_anchors"
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "fadingshadow:red_chili"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "fadingshadow:chili_seed"
+  }
+}
