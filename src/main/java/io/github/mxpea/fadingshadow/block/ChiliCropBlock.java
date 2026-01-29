@@ -22,10 +22,10 @@ public class ChiliCropBlock extends CropBlock {
     public static final int MAX_AGE =3;
     public static final IntegerProperty AGE =IntegerProperty.create("age",0,3);
     public static final VoxelShape[] SHAPE_BY_AGE =new VoxelShape[]{
-            Block.box(0.0F, 0.0F, 0.0F,16.0F, 2.0F, 16.0F),
-            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 4.0F, 16.0F),
-            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 6.0F, 16.0F),
-            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 8.0F, 16.0F)
+            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F),
+            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F),
+            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F),
+            Block.box(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F)
     };
 
     public ChiliCropBlock(Properties properties){
@@ -52,17 +52,6 @@ public class ChiliCropBlock extends CropBlock {
         return MAX_AGE;
     }
 
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!world.isClientSide() && player.getItemInHand(hand).is(ModItem.chili_seed.get())) {
-            // 如果玩家手持辣椒种子，允许种植
-            int age = this.getAge(state);
-            if (age == 0) {
-                world.setBlock(pos, this.getStateForAge(1), 2); // 设置种植状态
-                return InteractionResult.SUCCESS;
-            }
-        }
-        return InteractionResult.PASS;
-    }
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter world, BlockPos pos) {

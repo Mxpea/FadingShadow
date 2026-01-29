@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop" : "fadingshadow:block/chili_corp_stage3"
+    "crop": "fadingshadow:block/chili_crop_stage0"
   }
 }

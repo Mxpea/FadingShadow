@@ -1,11 +1,14 @@
 package io.github.mxpea.fadingshadow;
 
+import io.github.mxpea.fadingshadow.block.ModBlocks;
 import io.github.mxpea.fadingshadow.block.entity.ModBlockEntities;
 import io.github.mxpea.fadingshadow.block.entity.client.AnimatedBlockRender;
 import io.github.mxpea.fadingshadow.entity.ModEntity;
 import io.github.mxpea.fadingshadow.item.ModItem;
 import io.github.mxpea.fadingshadow.item.ModPotion;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -47,7 +50,15 @@ public class FadingShadowClient {
         FadingShadow.LOGGER.info("hi from the void");
         FadingShadow.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         BlockEntityRenderers.register(ModBlockEntities.SRA.get(), AnimatedBlockRender::new);
+
+        event.enqueueWork(() -> { //这些代码让种子作物定义为.cutout，让缘正常显示
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.chili_crop.get(), RenderType.cutout());
+        });
+
     }
+
+
+
 
     //这个是用来添加酿造台配方的
    @SubscribeEvent

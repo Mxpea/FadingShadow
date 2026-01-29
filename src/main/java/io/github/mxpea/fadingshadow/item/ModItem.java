@@ -19,11 +19,13 @@ public class ModItem {
     public static final DeferredItem<Item> reality_fabric =
             ITEMS.register("reality_fabric", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> lightning_in_a_bottle =      //下面的代码可以设置最大堆叠数（maxStackSize）
-            ITEMS.register("lightning_in_a_bottle", () -> new LightThrowItem(new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<Item> lightning_in_a_bottle =//下面的代码可以设置最大堆叠数（maxStackSize）
+            ITEMS.register("lightning_in_a_bottle", () ->
+                    new LightThrowItem(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> apple_juice =
-            ITEMS.register("apple_juice", () -> new AppleJuiceItem(new Item.Properties().stacksTo(16)));
+            ITEMS.register("apple_juice", () ->
+                    new AppleJuiceItem(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> test =
             ITEMS.register("test", () -> new Item(new Item.Properties()));//be deleted later
@@ -42,7 +44,8 @@ public class ModItem {
             ITEMS.register("firesalt_ingot", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> chili_seed =
-            ITEMS.register("chili_seed", () -> new Item(new Item.Properties()));
+            ITEMS.register("chili_seed", () ->
+                    new ItemNameBlockItem(ModBlocks.chili_crop.get(), new  Item.Properties()));
 
 
 
